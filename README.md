@@ -1,2 +1,2 @@
 # graffiticode-spec
-A collection of specs that define the form and function of a Graffiticode system.
+The definition of the core syntax and semantics of the Graffiticode language.
