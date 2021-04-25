@@ -91,7 +91,6 @@ Sign :: one of + -
 StringValue ::
   - `""` [lookahead != `"`]
   - `"` StringCharacter+ `"`
-  - `"""` BlockStringCharacter* `"""`
 
 StringCharacter ::
   - SourceCharacter but not `"` or `\` or LineTerminator
@@ -101,14 +100,6 @@ StringCharacter ::
 EscapedUnicode :: /[0-9A-Fa-f]{4}/
 
 EscapedCharacter :: one of `"` `\` `/` `b` `f` `n` `r` `t`
-
-BlockStringCharacter ::
-  - SourceCharacter but not `"""` or `\"""`
-  - `\"""`
-
-Note: Block string values are interpreted to exclude blank initial and trailing
-lines and uniform indentation with {BlockStringValue()}.
-
 
 ## Program Syntax
 
