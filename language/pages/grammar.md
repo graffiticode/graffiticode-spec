@@ -1,4 +1,4 @@
-# B. Grammar
+# Grammar
 
 ## Source Text
 
@@ -14,7 +14,7 @@ Ignored ::
   - WhiteSpace
   - LineTerminator
   - Comment
-  - Comma
+  - `,`
 
 WhiteSpace ::
   - "Horizontal Tab (U+0009)"
@@ -31,9 +31,6 @@ Comment ::
 
 CommentChar ::
   - SourceCharacter but not LineTerminator
-
-Comma ::
-  - `,`
 
 ## Lexical Tokens
 
@@ -52,6 +49,7 @@ Name ::
 NameStart ::
   - Letter
   - `_`
+  - `-`
 
 NameContinue ::
   - Letter
@@ -115,8 +113,8 @@ lines and uniform indentation with {BlockStringValue()}.
 ## Program Syntax
 
 Program :
-  - LetDefinition* Expression `..`
   - Expression `..`
+  - LetDefinition+ Expression `..`
 
 LetDefinition :
   - `let` Name = Expression `..`
@@ -127,7 +125,6 @@ Expression :
   - FunApp
 
 Value :
-  - Variable
   - IntValue
   - FloatValue
   - StringValue
@@ -136,6 +133,7 @@ Value :
   - EnumValue
   - ListValue
   - RecordValue
+  - LambdaValue
 
 BooleanValue : one of `true` `false`
 
@@ -144,11 +142,15 @@ NullValue : `null`
 EnumValue : Name but not `true`, `false` or `null`
 
 ListValue :
-  - [ ]
-  - [ Value+ ]
+  - `[` `]`
+  - `[` Value+ `]`
 
 RecordValue :
-  - { }
-  - { Field+ }
+  - `{` `}`
+  - `{` Field+ `}`
 
 Field : Name : Value
+
+LambdaValue :
+  - `<` `:` Expression `>`
+  - `<` Name+ `:` Expression `>`
