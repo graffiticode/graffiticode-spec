@@ -49,12 +49,12 @@ Name ::
 NameStart ::
   - Letter
   - `_`
-  - `-`
 
 NameContinue ::
   - Letter
   - Digit
   - `_`
+  - `-` (dash)
 
 Letter :: one of
   - `A` `B` `C` `D` `E` `F` `G` `H` `I` `J` `K` `L` `M`
