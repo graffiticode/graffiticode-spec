@@ -11,10 +11,10 @@ SourceCharacter ::
 ## Ignored Tokens
 
 Ignored ::
+  - `,`
   - WhiteSpace
   - LineTerminator
   - Comment
-  - `,`
 
 WhiteSpace ::
   - "Horizontal Tab (U+0009)"
@@ -173,10 +173,12 @@ Pattern :
   - RecordPattern
 
 ListPattern :
-  - `[` Name `]`
+  - `[` `]`
+  - `[` Name+ `]`
 
 RecordPattern :
-  - `{` Name `}`
+  - `{` `}`
+  - `{` Name+ `}`
 
 IfExpr :
   - `if` Expression `then` Expression
