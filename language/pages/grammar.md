@@ -122,7 +122,9 @@ LetDefinition :
 Expression :
   - Name
   - Value
-  - FunApp
+  - ApplyExpr
+  - CaseExpr
+  - IfExpr
 
 Value :
   - IntValue
@@ -153,4 +155,29 @@ Field : Name : Value
 
 LambdaValue :
   - `<` `:` Expression `>`
-  - `<` Name+ `:` Expression `>`
+  - `<` Pattern+ `:` Expression `>`
+
+ApplyExpr :
+  - Name
+  - Name Expression+
+
+CaseExpr :
+  - `case` Expression OfExpr+ `end`
+
+OfExpr :
+  - `of` Pattern `:` Expression
+
+Pattern :
+  - Name
+  - ListPattern
+  - RecordPattern
+
+ListPattern :
+  - `[` Name `]`
+
+RecordPattern :
+  - `{` Name `}`
+
+IfExpr :
+  - `if` Expression `then` Expression
+  - `if` Expression `then` Expression `else` Expression
