@@ -41,7 +41,7 @@ Token ::
   - FloatValue
   - StringValue
 
-Punctuator :: one of `(` `)` `..` `:` `=` 
+Punctuator :: one of `(` `)` `..` `.` `:` `=` 
 
 Name ::
   - NameStart NameContinue* [lookahead != NameContinue]
@@ -104,11 +104,11 @@ EscapedCharacter :: one of `"` `\` `/` `b` `f` `n` `r` `t`
 ## Program Syntax
 
 Program :
-  - Expression `..`
-  - LetDefinition+ Expression `..`
+  - Expression `.`
+  - LetDefinition+ Expression `.`
 
 LetDefinition :
-  - `let` Name = Expression `..`
+  - `let` Name = Expression `.`
 
 ```graffiticode
 let addAll = <[hd, ...tl], total = 0:
