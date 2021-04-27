@@ -110,6 +110,11 @@ Program :
 LetDefinition :
   - `let` Name = Expression `..`
 
+```
+let fn = <[hd, ...tl]: if len tl then fn tl else hd>..
+```
+
+
 Expression :
   - Name
   - Value
@@ -164,12 +169,15 @@ Pattern :
   - RecordPattern
 
 ListPattern :
-  - `[` `]`
-  - `[` Name+ `]`
+  - `[` RestPattern? `]`
+  - `[` Pattern+ RestPattern? `]`
+
+RestPattern :
+  - `...` Name
 
 RecordPattern :
-  - `{` `}`
-  - `{` Name+ `}`
+  - `{` RestPattern? `}`
+  - `{` Name+ RestPattern? `}`
 
 IfExpr :
   - `if` Expression `then` Expression
