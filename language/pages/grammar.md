@@ -114,8 +114,8 @@ LetDefinition :
 let addAll = <[hd, ...tl], total = 0:
     | Recurse over a list of numbers and return the sum of all element values.
     if len tl
-    then fn tl add total hd
-    else total
+      then fn tl add total hd
+      else total
 >..
 
 addAll [1 2 3 4 5 6 7 8 9 10]..  | Yields the value 55.
