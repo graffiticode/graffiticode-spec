@@ -116,9 +116,9 @@ let addAll = <[hd, ...tl], total = 0:
     if len tl
        then fn tl add total hd
        else total
->..
+>.
 
-addAll [1 2 3 4 5 6 7 8 9 10]..  | Yields the value 55.
+addAll [1 2 3 4 5 6 7 8 9 10].  | Yields the value 55
 ```
 
 Expression :
