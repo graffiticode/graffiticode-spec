@@ -27,7 +27,6 @@ LineTerminator ::
 
 Comment ::
   - `|` CommentChar* [lookahead != CommentChar]
-  - `/` CommentChar* [lookahead != CommentChar]
 
 CommentChar ::
   - SourceCharacter but not LineTerminator
