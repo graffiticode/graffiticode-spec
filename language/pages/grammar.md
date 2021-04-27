@@ -110,7 +110,7 @@ LetDefinition :
   - `let` Name = Expression `..`
 
 ```graffiticode
-let addAll = <[hd, ...tl], total = 0:
+let addAll = <[hd ...tl] total = 0:
     | Recurse over a list of numbers and return the sum of all element values.
     if len tl
        then fn tl add total hd
