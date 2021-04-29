@@ -172,9 +172,9 @@ CaseExpr :
 ```graffiticode
 case x
   of 10:
-    10
+    'ten'
   of _:
-    add x 1
+    'not ten'
 end
 >..
 ```
