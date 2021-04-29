@@ -109,6 +109,8 @@ Program :
 LetDefinition :
   - `let` Name = Expression `..`
 
+##### Example
+
 ```graffiticode
 let addAll = <[hd ...tl] total = 0:
     | Recurse over a list of numbers and return the sum of all element values.
