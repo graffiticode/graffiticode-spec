@@ -176,7 +176,6 @@ case x
   of _:
     'not ten'
 end
->..
 ```
 OfExpr :
   - `of` Pattern `:` Expression
