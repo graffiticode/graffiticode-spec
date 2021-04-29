@@ -167,6 +167,17 @@ ApplyExpr :
 CaseExpr :
   - `case` Expression OfExpr+ `end`
 
+##### Example
+
+```graffiticode
+case x
+  of 10:
+    10
+  of _:
+    add x 1
+end
+>..
+```
 OfExpr :
   - `of` Pattern `:` Expression
 
